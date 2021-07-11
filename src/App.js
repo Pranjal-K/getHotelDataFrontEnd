@@ -15,12 +15,12 @@ const App = ({ projects }) => {
         url: "http://localhost:4000/letsVisitTG/getHotel",
         params: {
           location: "Athens",
-          checkin: "2021-07-12",
+          checkin: "2021-07-15",
           checkout: "2021-07-21",
-          rooms: "1",
+          rooms: "2",
           adults: "2",
           children: "1" ,
-		  infants: "10"
+		  infants: "1"
         }
     }).then((resp) => {
         setData(resp.data)
@@ -35,7 +35,7 @@ const App = ({ projects }) => {
 						<Card.Header>
 							<Accordion.Toggle as={Button} variant="link" eventKey={hotel.code}>
 								<p>{hotel.name}</p>
-								<img src={hotel.photo} alt="GeeksforGeeks logo"/>
+								<img src={hotel.photo} alt="image"/>
 							</Accordion.Toggle>
 							<p>Starting Price: {hotel.minprice}</p>
 						</Card.Header>
@@ -48,7 +48,7 @@ const App = ({ projects }) => {
 												{rate.room}  Price: {rate.price}
 											</h6>
 											<img src={rate.photo}
-													alt="GeeksforGeeks logo"/>
+													alt="image"/>
 											<p>
 												{rate.rate_desc}
 											</p>
